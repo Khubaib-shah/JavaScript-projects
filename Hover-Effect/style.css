@@ -13,7 +13,6 @@ html {
   display: grid;
   place-items: center;
 }
-
 .gallery {
   width: clamp(30rem, 90%, 130rem);
   aspect-ratio: 16/9;
