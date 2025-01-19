@@ -8,9 +8,198 @@
 html {
   font-size: 62.5%;
 }
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .container {
   width: 100%;
   height: 100vh;
   display: grid;
   place-items: center;
+  padding: 5rem 20rem;
+}
+
+.contact {
+  width: 100%;
+  height: 100%;
+  background: #d8dde2;
+  border-radius: 60rem 2rem;
+}
+.contact > div {
+  flex: 1;
+}
+
+.telephone {
+  width: 30rem;
+  height: 20rem;
+  background: #5f9ea0;
+  border-radius: 100rem 100rem 20rem 20rem;
+  position: relative;
+  animation: animanum 4s infinite reverse;
+}
+
+@keyframes animanum {
+  0% {
+    transform: rotateZ(0);
+  }
+
+  1%,
+  3%,
+  5%,
+  7%,
+  9% {
+    transform: rotateZ(-1deg);
+  }
+
+  2%,
+  4%,
+  6%,
+  8%,
+  10% {
+    transform: rotateZ(1deg);
+  }
+  11%,
+  100% {
+    transform: rotateZ(0);
+  }
+}
+
+.telephone > div {
+  position: absolute;
+}
+.telephone::after,
+.telephone::before {
+  content: "";
+  width: 7rem;
+  height: 22rem;
+  background-color: #5f9ea0;
+  position: absolute;
+  bottom: 0;
+  border-radius: 5rem 5rem 0 0;
+}
+
+.telephone::after {
+  right: 4rem;
+}
+
+.telephone::before {
+  left: 4rem;
+}
+.handset {
+  width: 40rem;
+  height: 4rem;
+  background-color: #df6281;
+  top: -7.2rem;
+  left: -5rem;
+  border-radius: 5rem;
+}
+.handset::after,
+.handset::before {
+  content: "";
+  position: absolute;
+  width: 6rem;
+  height: 4rem;
+  background: #f1bd78;
+  z-index: 1;
+  bottom: -4.2rem;
+  border-radius: 2rem;
+}
+.handset::after {
+  left: 0;
+}
+.handset::before {
+  right: 0;
+}
+
+.dialing-machanism {
+  width: 10rem;
+  height: 10rem;
+  background-color: #d8dde2;
+  top: 5rem;
+  left: 10rem;
+  z-index: 1;
+  border-radius: 50%;
+  border: 2.5rem dotted #b0c1e4;
+}
+
+.stand {
+  width: 100%;
+  height: 5rem;
+  background-color: #5f9ea0;
+  bottom: -5.5rem;
+  border-radius: 5rem;
+}
+
+.form-wrapper {
+  flex-direction: column;
+  gap: 5rem 0;
+}
+
+.form-heading {
+  font-size: 6rem;
+}
+form {
+  flex-direction: column;
+  gap: 1rem 0;
+}
+
+form input,
+textarea {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: #5f9ea0;
+  color: white;
+  font-size: 1.6rem;
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+}
+input::placeholder,
+textarea::placeholder {
+  color: white;
+}
+textarea {
+  resize: vertical;
+  max-height: 10rem;
+  min-height: 5rem;
+}
+.form-btn {
+  background-color: #df6281;
+}
+
+@media (max-width: 1650px) {
+  .container {
+    padding: 5rem;
+  }
+  .contact {
+    border-radius: 30rem 2rem;
+  }
+}
+
+@media (max-width: 1000px) {
+  .container {
+    padding: 0rem;
+  }
+  .contact {
+    flex-direction: column-reverse;
+    border-radius: 0rem;
+  }
+  .telephone-wrapper {
+    margin-top: 10rem;
+  }
+}
+
+@media (max-width: 700px) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media (max-width: 400px) {
+  html {
+    font-size: 40%;
+  }
 }
